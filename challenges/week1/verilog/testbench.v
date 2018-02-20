@@ -1,3 +1,4 @@
+// helper macros for tests:
 `define STRINGIFY(x) `"x`"
 `define ASSERT(s, msg) \
     if (!s) \
@@ -11,10 +12,12 @@
         $display("assertion failed: %s [%0b] != %s [%0b]: %s", `STRINGIFY(a), a, `STRINGIFY(b), b, msg); \
     end
 
+// the testbench for this week.
 module testbench; 
     reg clk, reset, enable; 
     wire [3:0] count; 
         
+    // initialize our component
     challenge U0 ( 
     .clk    (clk), 
     .reset  (reset), 
@@ -22,20 +25,20 @@ module testbench;
     .count  (count) 
     ); 
         
+    // configuration & clock driving
     initial begin
         clk = 0; 
         reset = 0; 
         enable = 0; 
     end 
-        
     always    
         #5 clk = !clk; 
-
     initial begin
         $dumpfile ("testbench.vcd"); 
         $dumpvars; 
     end 
 
+    // the test code!
     initial begin
         reset = 1;
         #10 reset = 0;
@@ -55,7 +58,5 @@ module testbench;
         `ASSERT_EQ(count, 0, "wraps around");
         $finish; 
     end
-        
-    //Rest of testbench code after this line 
         
 endmodule
