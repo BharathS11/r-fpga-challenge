@@ -78,9 +78,22 @@ docker run -v $(pwd):/project -it kazimuth2/r-fpga-challenge
 
 This will give you a shell in a Debian Linux VM with the tools you need installed. Its file system will be in sync with your machine's; your `r-fpga-challenge` folder is mounted at `/project` in the VM. That means that you can edit in whatever editors you have on your system and just run builds in the VM.
 
+Note that the VM image is somewhat large (up to 1GB) because it has a bunch of tools installed (icarus, ghdl, verilator, probably java, scala and python eventually...)
+
+You can update your VM image: 
+`docker pull kazimuth2/r-fpga-challenge`.
+
+You can clean up old images:
+```
+docker container prune
+docker image prune
+```
+
 ## FAQ
 ### Can I use [XYZ professional tool]?
 Yeah, sure
+
+You'll have to set up the project files yourself though. Just run the testbench file.
 
 ### Can I use an IP from [XYZ professional tool]?
 Your code probably won't pass the tests if it can't build with our Makefiles, and you definitely shouldn't be committing licensed IPs to git. Anyway, the point is to code things yourself ;)

@@ -38,7 +38,7 @@ cheat: testbench-cheat
 
 clean:
 	@echo "${MAGENTA}cleaning...${CLEAR}"
-	-rm -rf .output.txt testbench testbench.vcd
+	-rm -rf .output.txt testbench testbench.vcd testbench-cheat
 	@echo "${GREEN}succeeded${CLEAR}"
 
 .PHONY: clean test all

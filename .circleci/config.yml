@@ -2,7 +2,7 @@ version: 2
 jobs:
    build:
      docker:
-       - image: kazimuth2/r-fpga-challenge:latest
+       - image: kazimuth2/r-fpga-challenge:0.0.2
      steps:
        - checkout
        - run: |
