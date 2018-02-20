@@ -1,4 +1,4 @@
-# [/r/fpga](https://reddit.com/r/fpga) challenge
+# [/r/fpga](https://reddit.com/r/fpga) challenge [![CircleCI](https://circleci.com/gh/kazimuth/r-fpga-challenge.svg?style=svg)](https://circleci.com/gh/kazimuth/r-fpga-challenge)
 
 Let's write some circuits!
 
