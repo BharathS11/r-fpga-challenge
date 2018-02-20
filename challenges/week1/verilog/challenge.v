@@ -5,4 +5,5 @@
 // and count up when `enable` is driven to 1
 module challenge(input clk, input reset, input enable, output [3:0] count);
 // TODO: some code!
+// ...
 endmodule
