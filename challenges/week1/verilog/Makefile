@@ -21,6 +21,21 @@ test: testbench
 		echo "${GREEN}tests passed${CLEAR}";\
 	fi
 
+testbench-cheat:
+	@echo "${MAGENTA}running provided solution...${CLEAR}"
+	iverilog -o testbench-cheat testbench.v .solution/challenge.v
+
+cheat: testbench-cheat
+	@echo "${MAGENTA}running tests on pre-provided solution...${CLEAR}"
+	@echo ./testbench-cheat
+	@./testbench-cheat | tee .output.txt
+	@if grep "assertion failed" .output.txt 1>/dev/null; then \
+		echo "${RED}tests failed${CLEAR}";\
+		exit 1;\
+	else\
+		echo "${GREEN}tests passed${CLEAR}";\
+	fi
+
 clean:
 	@echo "${MAGENTA}cleaning...${CLEAR}"
 	-rm -rf .output.txt testbench testbench.vcd

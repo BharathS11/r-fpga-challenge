@@ -88,5 +88,14 @@ Your code probably won't pass the tests if it can't build with our Makefiles, an
 ### Can I license the code I submit?
 This folder has an MIT license in it, so your code will too, unless you swap out the license in your fork.
 
+### Can I make a pull request that isn't a submission?
+Sure! If you want to make an actual pull request - like, one that isn't a submission - just include "actual" in the name of your branch, for instance `actual-fixnewlines` or `actual-addchisel`. The CI will then run tests on pre-provided solutions in your PR, and test all of the code in the repo.
+
+### Can I add a new language?
+Sure! Your language should be put in its own folder, and have a Makefile, where the default target runs tests on the challenge template, and the target named `cheat` runs tests on a pre-provided solution. If possible, you should put the pre-provided solution in some kind of "hidden" folder (e.g. `.solution` for the verilog template), so that users don't have to look at it if they're not trying to.
+
+You should also add the language to the Dockerfile. There must be a free, repeatable way to install the language; but we don't require that the language is fully open-source / GPL or anything like that.
+
 ### Isn't this all kinda jank?
 is anything about FPGA development not jank
+
