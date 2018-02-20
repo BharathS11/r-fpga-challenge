@@ -5,9 +5,9 @@ CLEAR:=\033[0m
 
 all: test
 
-testbench: challenge.v testbench.v
+testbench: *.v
 	@echo "${MAGENTA}running build...${CLEAR}"
-	iverilog -o testbench testbench.v challenge.v
+	iverilog -o testbench *.v
 	@echo "${GREEN}succeeded${CLEAR}"
 
 test: testbench
