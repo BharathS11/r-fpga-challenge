@@ -4,15 +4,15 @@ RED="\033[0;31m"
 GREEN="\033[0;32m"
 CLEAR="\033[0m"
 
-echo "$MAGENTA""== Testing all pre-provided solutions. ==""$CLEAR"
+echo "$MAGENTA""== testing all pre-provided solutions. ==""$CLEAR"
 
 # test pre-provided solutions, for actual pull requests
 set -e
 for WEEK in $(ls challenges | sort -V); do
-    echo "$MAGENTA""Testing week: $WEEK""$CLEAR"
+    echo "$MAGENTA""testing week: $WEEK""$CLEAR"
     cd challenges/$WEEK
     for LANGUAGE in $(ls -t); do
-        echo "$MAGENTA""Testing language: $LANGUAGE""$CLEAR"
+        echo "$MAGENTA""testing language: $LANGUAGE""$CLEAR"
         cd $LANGUAGE
         make cheat
         cd ..
@@ -20,4 +20,4 @@ for WEEK in $(ls challenges | sort -V); do
     cd ../..
 done
 
-echo "$MAGENTA""== Complete. ==""$CLEAR"
+echo "$MAGENTA""== complete. ==""$CLEAR"

@@ -6,7 +6,7 @@ CLEAR:=\033[0m
 all: test
 
 testbench: *.v
-	@echo "${MAGENTA}running build...${CLEAR}"
+	@echo "${MAGENTA}building...${CLEAR}"
 	iverilog -o testbench *.v
 	@echo "${GREEN}succeeded${CLEAR}"
 
@@ -22,7 +22,7 @@ test: testbench
 	fi
 
 testbench-cheat:
-	@echo "${MAGENTA}running provided solution...${CLEAR}"
+	@echo "${MAGENTA}building pre-provided solution...${CLEAR}"
 	iverilog -o testbench-cheat testbench.v .solution/challenge.v
 
 cheat: testbench-cheat
