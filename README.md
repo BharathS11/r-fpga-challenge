@@ -19,7 +19,7 @@ $ make
 ```
 See the [open-source toolchains](#open-source-toolchains) section for install information.
 You can also [run open-source toolchains in a docker vm](#running-with-docker) for highly repeatable builds.
-Or, you can run with whatever your preferred toolchain is.
+Or, you can run with whatever your preferred closed-source toolchain is.
 
 Implement the interface for the week's challenge using with whatever toolchain you want. The interface will be in `challenge.v` or `challenge.vhdl`. Once you've got it running, the testbench should pass:
 
