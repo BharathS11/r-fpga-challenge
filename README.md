@@ -109,6 +109,9 @@ Sure! Your language should be put in its own folder, and have a Makefile, where 
 
 You should also add the language to the Dockerfile. There must be a free, repeatable way to install the language; but we don't require that the language is fully open-source / GPL or anything like that.
 
+### Can I compare my synthesized results with other peoples'?
+We don't currently have automated synthesis set up, only simulation, because there aren't any good solutions for open-source P&R currently available. (Qflow and IceStorm are cool, but target very small chips, which only very small applications can be run on.) You can post your timing and size results in the reddit thread if you have professional tools installed. We may eventually get something set up using the free tools provided by Altera or Xilinx, but that requires dealing with some licensing issues.
+
 ### Isn't this all kinda jank?
 is anything about FPGA development not jank
 
