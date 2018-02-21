@@ -5,17 +5,19 @@ jobs:
        - image: kazimuth2/r-fpga-challenge:0.0.2
      steps:
        - checkout
-       - run: |
-          # JANK ALERT
-          # if the branch name has "actual" in it, or if we're on kazimuth/master,
-          # run actual tests;
-          # otherwise, run only the tests for the latest week,
-          # and accept any language passing as all tests passing
-          set -e
-          if [[ $CIRCLE_BRANCH == *"actual"* ]] || [[ $CIRCLE_BRANCH == "master" ]] && [[ $CIRCLE_USERNAME == "kazimuth" ]]; then
-             ./test-all-cheat.sh
-          else
-             ./test-submission.sh
-          fi
+       - run: 
+           name: Test
+           command: |
+             # JANK ALERT
+             # if the branch name has "actual" in it, or if we're on kazimuth/master,
+             # run actual tests;
+             # otherwise, run only the tests for the latest week,
+             # and accept any language passing as all tests passing
+             set -e
+             if [[ $CIRCLE_BRANCH == *"actual"* ]] || [[ $CIRCLE_BRANCH == "master" ]] && [[ $CIRCLE_USERNAME == "kazimuth" ]]; then
+                ./test-all-cheat.sh
+             else
+                ./test-submission.sh
+             fi
          
 
