@@ -1,0 +1,22 @@
+FROM ubuntu:trusty
+
+MOUNT .:/downloads
+
+RUN apt-get update && \
+    apt-get install -y tcsh wget
+
+RUN cd /downloads && \
+    wget -nc http://download.altera.com/akdlm/software/acdsinst/17.1std/590/ib_installers/arria_lite-17.1.0.590.qdz && \
+    wget -nc http://download.altera.com/akdlm/software/acdsinst/17.1std/590/ib_installers/QuartusLiteSetup-17.1.0.590-linux.run && \
+    chmod +x QuartusLiteSetup-17.1.0.590-linux.run && \
+    echo "This will take a while..." && \
+    ./QuartusLiteSetup-17.1.0.590-linux.run --mode unattended --unattendedmodeui minimal --accept_eula 1 --disable-components modelsim_ase,modelsim_ae,quartus_help,quartus_update  && \
+    echo "Removing useless stuff..." && \
+    rm -rf /root/intelFPGA_lite/17.1/hls/ /root/intelFPGA_lite/17.1/nios2eds/ /root/intelFPGA_lite/17.1/ip/ /root/intelFPGA_lite/17.1/quartus/dspba
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libpng12-0 libglib2.0-0 libfreetype6 libtcmalloc-minimal4 && \
+    rm -rf /var/lib/apt/lists
+
+ENV LD_PRELOAD="/usr/lib/libtcmalloc_minimal.so.4:$LD_PRELOAD"
+ENV PATH="/root/intelFPGA_lite/17.1/quartus/bin:$PATH"
