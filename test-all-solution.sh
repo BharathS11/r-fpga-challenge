@@ -14,7 +14,7 @@ for WEEK in $(ls challenges | sort -V); do
     for LANGUAGE in $(ls -t); do
         echo "$MAGENTA""testing language: $LANGUAGE""$CLEAR"
         cd $LANGUAGE
-        make cheat
+        make solution
         cd ..
     done
     cd ../..

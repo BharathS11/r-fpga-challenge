@@ -15,7 +15,7 @@ jobs:
              # and accept any language passing as all tests passing
              set -e
              if [[ $CIRCLE_BRANCH == *"actual"* ]] || [[ $CIRCLE_BRANCH == "master" ]] && [[ $CIRCLE_USERNAME == "kazimuth" ]]; then
-                ./test-all-cheat.sh
+                ./test-all-solution.sh
              else
                 ./test-submission.sh
              fi

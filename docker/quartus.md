@@ -1,3 +1,7 @@
+
+
+
+# Useful links
 https://www.alteraforum.com/forum/showthread.php?t=3854
 
 http://download.altera.com/akdlm/software/acdsinst/17.1std/590/ib_installers/arria_lite-17.1.0.590.qdz

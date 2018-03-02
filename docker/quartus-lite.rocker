@@ -15,7 +15,7 @@ RUN cd /downloads && \
     rm -rf /root/intelFPGA_lite/17.1/hls/ /root/intelFPGA_lite/17.1/nios2eds/ /root/intelFPGA_lite/17.1/ip/ /root/intelFPGA_lite/17.1/quartus/dspba
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libpng12-0 libglib2.0-0 libfreetype6 libtcmalloc-minimal4 && \
+    apt-get install -y --no-install-recommends libpng12-0 libglib2.0-0 libfreetype6 libtcmalloc-minimal4 make && \
     rm -rf /var/lib/apt/lists
 
 ENV LD_PRELOAD="/usr/lib/libtcmalloc_minimal.so.4:$LD_PRELOAD"

@@ -2,3 +2,17 @@ testbench
 testbench-cheat
 *.vcd
 .output.txt
+*.fit.*
+*.flow.*
+*.jdi
+*.map.*
+*.pin
+*.qpf
+*.qsp
+*.sld
+*.sof
+*.sta.*
+*.asm.*
+*.qsf
+db/
+incremental_db/

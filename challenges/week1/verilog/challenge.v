@@ -1,8 +1,15 @@
-// /r/fpga challenge
-//
-// This is the interface for the component for this week
-// It's a counter; it should reset to 0 when `reset` is driven to 1
-// and count up when `enable` is driven to 1
-module challenge(input clk, input reset, input enable, output [3:0] count);
-// TODO: some code!
+// Here's a solution to this week's challenge, for infra testing purposes.
+// Don't read it if you want to solve things yourself :)
+module challenge(input clk, input reset, input enable, output reg [3:0] count);
+always @ (posedge clk)
+begin
+    if (reset == 1'b1)
+    begin
+        count <= 0;
+    end
+    else if (enable == 1'b1)
+    begin
+        count <= count + 1;
+    end
+end
 endmodule
